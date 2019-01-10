@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Memsource_Connector::memsource" title="Memsource" sortOrder="51">
+                    <resource id="Memsource_Connector::configuration" title="Configuration" sortOrder="10">
+                        <resource id="Memsource_Connector::general" title="General" sortOrder="51"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

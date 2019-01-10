@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="memsource/v1/account" method="GET">
+        <service class="Memsource\Connector\Api\v1\Account\AccountApi" method="getDetail"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="memsource/v1/stores" method="GET">
+        <service class="Memsource\Connector\Api\v1\Store\StoresApi" method="getStores"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="memsource/v1/content-types" method="GET">
+        <service class="Memsource\Connector\Api\v1\Content\ContentTypesApi" method="getContentTypes"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="memsource/v1/content/:contentType" method="GET">
+        <service class="Memsource\Connector\Api\v1\Content\ContentApi" method="getContentList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="memsource/v1/content/:contentType/:id" method="GET">
+        <service class="Memsource\Connector\Api\v1\Content\ContentApi" method="getSingleContent"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="memsource/v1/content/:contentType/:id" method="POST">
+        <service class="Memsource\Connector\Api\v1\Content\ContentApi" method="updateContent"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+</routes>

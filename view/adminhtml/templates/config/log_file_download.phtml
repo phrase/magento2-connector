@@ -1,0 +1,8 @@
+<a href="<?php echo $block->getFileDownloadLink(); ?>" target="_blank">
+    Download
+</a>
+or
+<a href="<?php echo $block->getFileEmptyLink(); ?>">
+    empty
+</a>
+log file (Size: <?php echo $block->getFile()->getSizeInKB(); ?> kB)

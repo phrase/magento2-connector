@@ -1,0 +1,14 @@
+<button id="memsource_generate_token_button"
+        type="button"
+        title="<?php echo __('Generate token'); ?>"
+        onclick="generateToken()"><?php echo __('Generate token'); ?></button>
+<script>
+    function generateToken() {
+        var token = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < <?php echo \Memsource\Connector\Block\Adminhtml\Config\GenerateTokenButton::TOKEN_LENGTH; ?>; i++) {
+            token += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        document.getElementById('memsourceconnector_general_token').value = token;
+    }
+</script>
