@@ -4,7 +4,7 @@ namespace Memsource\Connector\Setup;
 
 use Magento\Framework\App\CacheInterface;
 use Magento\Framework\App\Config\ConfigResource\ConfigInterface;
-use Magento\Framework\App\ScopeInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -50,7 +50,7 @@ class InstallData implements InstallDataInterface
         $this->resourceConfig->saveConfig(
             $this->configuration->getDebugPath(),
             0,
-            ScopeInterface::SCOPE_DEFAULT,
+            ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
             Store::DEFAULT_STORE_ID
         );
     }
@@ -60,7 +60,7 @@ class InstallData implements InstallDataInterface
         $this->resourceConfig->saveConfig(
             $this->configuration->getTokenPath(),
             GenerateTokenButton::generateToken(),
-            ScopeInterface::SCOPE_DEFAULT,
+            ScopeConfigInterface::SCOPE_TYPE_DEFAULT,
             Store::DEFAULT_STORE_ID
         );
     }
