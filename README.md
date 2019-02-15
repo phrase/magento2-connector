@@ -6,15 +6,18 @@
 
 ## Memsource
 
-Memsource is a cloud-based translation platform trusted by reputable companies and agencies 
-around the world since its inception in 2010.
+[Memsource](https://www.memsource.com) is the translation management system for global companies wanting to improve 
+localization efficiency. 400+ languages, 50+ file types, 25+ MT engines, REST API, and patented AI make Memsource 
+the TMS used by many of the world’s leading brands to reduce costs, automate workflows, and optimize the entire 
+translation process.
 
-This extension allows you to connect Magento 2 with Memsource Cloud and translate the following
-content: products, categories, pages and blocks.
+The Memsource extension for Magento 2 allows you to connect your Memsource 2 account with Memsource to translate
+products, categories, pages, and blocks.
+
 
 ## Installation
 
-There are three ways how to install Memsource Connector extension into your Magento 2 instance.
+There are three ways to install the Memsource Connector extension into your Magento 2 instance:
 
 ### 1. With Composer
 
@@ -29,11 +32,11 @@ php bin/magento setup:static-content:deploy
 
 ### 2. Without Composer
 
-In case you can't use Composer:
+If you are unable to use Composer:
 
-1. Download zip file of this extension
-2. Extract downloaded zip into the folder `app/code/Memsource/Connector` in your Magento 2 installation
-3. Enable extension and clear cache:
+1. Download the zip file above
+2. In your Magento 2 installation, extract the downloaded zip file into the folder `app/code/Memsource/Connector`
+3. Enable the extension and clear the cache:
 
 ```bash
 php bin/magento module:enable Memsource_Connector
@@ -49,15 +52,16 @@ Our extension is currently under review, so it will be available within a few we
 
 ## Configuration
 
-In Magento 2 Administration go to `Stores` → `Configuration` → `MEMSOURCE`. 
-To connect Magento with Memsource you will need URL and Token: 
+In Magento 2, go to `Stores` → `Configuration` → `MEMSOURCE`.
+Magento with Memsource, you will need a URL and a Token:
 
 <p align="center">
 <img src="https://github.com/memsource/magento2-connector/raw/master/docs/magento-config.png">
 </p>
 
-Then open Memsource Cloud and go to `Setup` → `Integrations` → `Connectors` → `New`. Fill in form with URL 
-and Token from previous step and click on Test connection. Then choose source website, store and store view:
+Then, open Memsource and go to `Setup` → `Integrations` → `Connectors` → `New`. Fill in the form with your 
+URL and Token from the previous step and click on `Test connection`. Then, choose the source website, store, 
+and store view:
 
 <p align="center">
 <img src="https://github.com/memsource/magento2-connector/raw/master/docs/memsource-config.png">
