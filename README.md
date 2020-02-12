@@ -48,21 +48,15 @@ php bin/magento setup:static-content:deploy
 
 ### 3. Magento Marketplace
 
-Our extension is currently under review, so it will be available within a few weeks.
+Find the Memsource Connector on the 
+[Magento Marketplace](https://marketplace.magento.com/memsource-magento2-connector.html) 
+and get the extension. In the Magento Administration, go to `System` → `Web Setup Wizard` → `Extension Manager`. 
+Under the number of extensions to install, click on `Review and Install`. Then, find the Memsource Connector, 
+and click on the `Install` link. If you are not sure about any of the steps above, check out the 
+[Magento Docs](https://docs.magento.com/marketplace/user_guide/buyers/install-extension.html) 
+for further information.
 
-## Configuration
+## User Guide
 
-In Magento 2, go to `Stores` → `Configuration` → `MEMSOURCE`.
-Magento with Memsource, you will need a URL and a Token:
-
-<p align="center">
-<img src="https://github.com/memsource/magento2-connector/raw/master/docs/magento-config.png">
-</p>
-
-Then, open Memsource and go to `Setup` → `Integrations` → `Connectors` → `New`. Fill in the form with your 
-URL and Token from the previous step and click on `Test connection`. Then, choose the source website, store, 
-and store view:
-
-<p align="center">
-<img src="https://github.com/memsource/magento2-connector/raw/master/docs/memsource-config.png">
-</p>
+If you want to know how to set up and use the Memsource Connector for Magento 2, check out the 
+[User Guide](https://github.com/memsource/magento2-connector/raw/master/USER-GUIDE.pdf) for more information.
