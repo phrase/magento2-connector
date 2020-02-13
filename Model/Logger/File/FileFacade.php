@@ -4,7 +4,7 @@ namespace Memsource\Connector\Model\Logger\File;
 
 use Magento\Framework\Filesystem\DirectoryList;
 
-final class FileFacade
+class FileFacade
 {
     /** @var DirectoryList */
     private $directoryList;
@@ -37,11 +37,14 @@ final class FileFacade
     public function emptyFile()
     {
         $filePath = File::getFullPath($this->directoryList->getRoot());
-        $file = @fopen($filePath, 'r+');
 
-        if ($file !== false) {
-            ftruncate($file, 0);
-            fclose($file);
+        if (file_exists($filePath)) {
+            $file = fopen($filePath, 'r+');
+
+            if ($file !== false) {
+                ftruncate($file, 0);
+                fclose($file);
+            }
         }
 
         return true;

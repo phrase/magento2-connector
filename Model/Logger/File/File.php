@@ -34,6 +34,12 @@ class File extends \SplFileInfo
      */
     public function getContent()
     {
-        return @file_get_contents($this->getRealPath()) ?: null;
+        $filePath = $this->getRealPath();
+
+        if (file_exists($filePath)) {
+            return file_get_contents($this->getRealPath()) ?: null;
+        }
+
+        return null;
     }
 }

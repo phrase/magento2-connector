@@ -6,7 +6,7 @@ use Magento\Framework\ObjectManagerInterface;
 use Memsource\Connector\Model\ResourceModel\Mapping as MappingResource;
 use Memsource\Connector\Model\ResourceModel\Mapping\Collection as MappingCollection;
 
-final class MappingFacade
+class MappingFacade
 {
     /** @var MappingCollection */
     private $mappingCollection;
