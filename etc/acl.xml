@@ -3,9 +3,9 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Memsource_Connector::memsource" title="Memsource" sortOrder="51">
-                    <resource id="Memsource_Connector::configuration" title="Configuration" sortOrder="10">
-                        <resource id="Memsource_Connector::general" title="General" sortOrder="51"/>
+                <resource id="Memsource_Connector::memsource" title="Memsource" sortOrder="1">
+                    <resource id="Memsource_Connector::configuration" title="Configuration" sortOrder="1">
+                        <resource id="Memsource_Connector::general" title="General" sortOrder="1"/>
                     </resource>
                 </resource>
             </resource>

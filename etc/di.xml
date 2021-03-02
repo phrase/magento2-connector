@@ -19,12 +19,12 @@
 
     <type name="Magento\Webapi\Controller\Rest">
         <plugin name="memsource_connector_log"
-                type="\Memsource\Connector\Model\Logger\Webapi\RestApiLogger"/>
+                type="Memsource\Connector\Model\Logger\Webapi\RestApiLogger"/>
     </type>
 
-    <type name="\Magento\Framework\Webapi\ServiceOutputProcessor">
+    <type name="Magento\Framework\Webapi\ServiceOutputProcessor">
         <plugin name="memsource_connector_log"
-                type="\Memsource\Connector\Model\Logger\Webapi\ServiceOutputProcessor"/>
+                type="Memsource\Connector\Model\Logger\Webapi\ServiceOutputProcessor"/>
     </type>
 
 </config>
