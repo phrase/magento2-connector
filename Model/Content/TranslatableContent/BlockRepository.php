@@ -59,6 +59,7 @@ class BlockRepository extends AbstractContentRepository
      */
     public function update($storeId, $contentId, $serializedBody)
     {
+        $sourceBlock = $this->blockRepository->getById($contentId);
         $lang = $this->getLangCodeByStoreId($storeId);
         $mapping = $this->mappingCollection->getOneBySourceIdAndTypeAndLang($contentId, Mapping::BLOCK_TYPE, $lang);
 
@@ -67,6 +68,7 @@ class BlockRepository extends AbstractContentRepository
             $translatedBlock = $this->blockFactory->create();
             $translatedBlock = $this->deserializeItem($serializedBody, $translatedBlock);
             $translatedBlock->setStoreId([$storeId]);
+            $translatedBlock->setIdentifier($sourceBlock->getIdentifier());
             $this->blockRepository->save($translatedBlock);
             $this->mappingFacade->add($contentId, $translatedBlock->getId(), Mapping::BLOCK_TYPE, $lang);
         } else {

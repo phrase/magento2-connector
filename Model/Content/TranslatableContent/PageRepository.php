@@ -67,9 +67,9 @@ class PageRepository extends AbstractContentRepository
         if ($mapping === false) {
             $translatedPage = $this->pageFactory->create();
             $translatedPage = $this->deserializeItem($serializedBody, $translatedPage);
-            $translatedPage->setIdentifier($this->pageUrlGenerator->generateUrlKey($translatedPage));
             $translatedPage->setPageLayout($sourcePage->getPageLayout());
             $translatedPage->setStoreId([$storeId]);
+            $translatedPage->setIdentifier($sourcePage->getIdentifier());
             $this->pageRepository->save($translatedPage);
             $this->mappingFacade->add($contentId, $translatedPage->getId(), Mapping::PAGE_TYPE, $lang);
         } else {
