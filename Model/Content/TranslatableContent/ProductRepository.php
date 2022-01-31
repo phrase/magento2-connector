@@ -99,10 +99,11 @@ class ProductRepository extends AbstractContentRepository
 
     /**
      * @param ProductInterface $product
+     * @param int $storeId
      * @param string|null $serializedBody
      * @return Content
      */
-    protected function createContent($product, $serializedBody = null)
+    protected function createContent($product, $storeId, $serializedBody = null)
     {
         return new Content($product->getId(), $product->getName(), $product->getUpdatedAt(), $serializedBody);
     }
@@ -130,7 +131,6 @@ class ProductRepository extends AbstractContentRepository
      */
     protected function createItemFromArray($deserialized, $item)
     {
-
         $item->setName($deserialized[$this->getMainTranslatableAttribute()]);
         unset($deserialized[$this->getMainTranslatableAttribute()]);
 

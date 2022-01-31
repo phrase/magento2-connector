@@ -100,10 +100,11 @@ class CategoryRepository extends AbstractContentRepository
 
     /**
      * @param CategoryInterface $item
+     * @param int $storeId
      * @param string|null $serializedBody
      * @return Content
      */
-    protected function createContent($item, $serializedBody = null)
+    protected function createContent($item, $storeId, $serializedBody = null)
     {
         return new Content($item->getId(), $item->getName(), $item->getUpdatedAt(), $serializedBody);
     }

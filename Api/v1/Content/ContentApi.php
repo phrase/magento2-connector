@@ -6,12 +6,13 @@ use Memsource\Connector\Model\Content\TranslatableContent\BlockRepository;
 use Memsource\Connector\Model\Content\TranslatableContent\CategoryRepository;
 use Memsource\Connector\Model\Content\TranslatableContent\ContentRepositoryInterface;
 use Memsource\Connector\Model\Content\TranslatableContent\PageRepository;
+use Memsource\Connector\Model\Content\TranslatableContent\ProductAttributeRepository;
 use Memsource\Connector\Model\Content\TranslatableContent\ProductRepository;
 use Memsource\Connector\Model\Validator\RequestValidator;
 
 class ContentApi
 {
-    const DEFAULT_LIMIT = 50;
+    const DEFAULT_LIMIT = 5000;
     const DEFAULT_OFFSET = 0;
 
     /** @var RequestValidator */
@@ -25,7 +26,8 @@ class ContentApi
         BlockRepository $blockRepository,
         CategoryRepository $categoryRepository,
         PageRepository $pageRepository,
-        ProductRepository $productRepository
+        ProductRepository $productRepository,
+        ProductAttributeRepository $productAttributeRepository
     ) {
         $this->requestValidator = $requestValidator;
         $this->repositories = [
@@ -33,6 +35,7 @@ class ContentApi
             CategoryRepository::CONTENT_TYPE => $categoryRepository,
             PageRepository::CONTENT_TYPE => $pageRepository,
             ProductRepository::CONTENT_TYPE => $productRepository,
+            ProductAttributeRepository::CONTENT_TYPE => $productAttributeRepository,
         ];
     }
 
@@ -48,11 +51,6 @@ class ContentApi
      */
     public function getContentList($contentType, $storeId, $token, $limit = self::DEFAULT_LIMIT, $offset = self::DEFAULT_OFFSET)
     {
-        // temporarily overwritten
-        $limit = 3000;
-        $offset = 0;
-        // end
-
         $this->requestValidator->validateToken($token);
         $this->requestValidator->validateContentType($contentType, array_keys($this->repositories));
         $this->requestValidator->validateStoreId($storeId);

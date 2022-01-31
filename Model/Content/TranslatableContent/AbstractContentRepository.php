@@ -29,7 +29,7 @@ abstract class AbstractContentRepository implements ContentRepositoryInterface
         $items = $this->findItems($storeId, $limit, $offset);
 
         foreach ($items as $item) {
-            $content[] = $this->createContent($item);
+            $content[] = $this->createContent($item, $storeId);
         }
 
         return new ContentList($content, $totalBlocksCount, count($content), $limit, $offset);
@@ -41,9 +41,9 @@ abstract class AbstractContentRepository implements ContentRepositoryInterface
     public function getOne($contentId, $storeId)
     {
         $item = $this->findItemById($contentId, $storeId);
-        $serializedBody = $this->serializeItem($item);
+        $serializedBody = $this->serializeItem($item, $storeId);
 
-        return $this->createContentDetail($item, $serializedBody);
+        return $this->createContentDetail($item, $storeId, $serializedBody);
     }
 
     /**
@@ -85,26 +85,29 @@ abstract class AbstractContentRepository implements ContentRepositoryInterface
 
     /**
      * @param BlockInterface|PageInterface|CategoryInterface|ProductInterface $item
+     * @param int $storeId
      * @param string|null $serializedBody
      * @return Content
      */
-    abstract protected function createContent($item, $serializedBody = null);
+    abstract protected function createContent($item, $storeId, $serializedBody = null);
 
     /**
      * @param BlockInterface|PageInterface|CategoryInterface|ProductInterface $item
+     * @param int $storeId
      * @param string|null $serializedBody
      * @return ContentDetail
      */
-    protected function createContentDetail($item, $serializedBody)
+    protected function createContentDetail($item, $storeId, $serializedBody)
     {
-        return new ContentDetail($this->createContent($item, $serializedBody));
+        return new ContentDetail($this->createContent($item, $storeId, $serializedBody));
     }
 
     /**
      * @param BlockInterface|PageInterface|CategoryInterface|ProductInterface $item
+     * @param int $storeId
      * @return string
      */
-    protected function serializeItem($item)
+    protected function serializeItem($item, $storeId)
     {
         $serializedBlock = '';
 
@@ -166,7 +169,7 @@ abstract class AbstractContentRepository implements ContentRepositoryInterface
     /**
      * @return string
      */
-    private function getDeserializationPattern()
+    protected function getDeserializationPattern()
     {
         $pattern = '';
 

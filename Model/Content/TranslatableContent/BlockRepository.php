@@ -120,10 +120,11 @@ class BlockRepository extends AbstractContentRepository
 
     /**
      * @param BlockInterface $item
+     * @param int $storeId
      * @param string|null $serializedBody
      * @return Content
      */
-    protected function createContent($item, $serializedBody = null)
+    protected function createContent($item, $storeId, $serializedBody = null)
     {
         return new Content($item->getId(), $item->getTitle(), $item->getUpdateTime(), $serializedBody);
     }

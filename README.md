@@ -1,7 +1,7 @@
 # Memsource Connector for Magento 2
 
 [![Latest version](https://img.shields.io/packagist/v/memsource/magento2-connector.svg)](https://packagist.org/packages/memsource/magento2-connector)
-![Magento 2](https://img.shields.io/badge/Magento-%3E=2.1-brightgreen.svg)
+![Magento 2](https://img.shields.io/badge/Magento-%3E=2.3-brightgreen.svg)
 ![PHP version](https://img.shields.io/badge/PHP-%3E=5.6.5-blue.svg)
 
 ## Memsource

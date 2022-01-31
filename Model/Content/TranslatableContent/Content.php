@@ -52,7 +52,7 @@ class Content implements ContentInterface
         if ($timestamp !== false) {
             $this->modified = $timestamp;
         } else {
-            $this->modified = time();
+            $this->modified = null;
         }
     }
 

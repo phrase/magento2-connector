@@ -120,10 +120,11 @@ class PageRepository extends AbstractContentRepository
 
     /**
      * @param PageInterface $page
+     * @param int $storeId
      * @param string|null $serializedBody
      * @return Content
      */
-    protected function createContent($page, $serializedBody = null)
+    protected function createContent($page, $storeId, $serializedBody = null)
     {
         return new Content($page->getId(), $page->getTitle(), $page->getUpdateTime(), $serializedBody);
     }
