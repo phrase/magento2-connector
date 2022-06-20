@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="memsource_connector_translation_mapping"
+           resource="default"
+           engine="innodb"
+           comment="Magento connector table">
+        <column xsi:type="int"
+                name="map_id"
+                unsigned="false"
+                nullable="false"
+                identity="true"/>
+        <column xsi:type="int"
+                name="map_source_id"
+                nullable="false"/>
+        <column xsi:type="int"
+                name="map_target_id"
+                nullable="false"/>
+        <column xsi:type="varchar"
+                name="map_type"
+                length="20"
+                nullable="false"/>
+        <column xsi:type="varchar"
+                name="map_lang"
+                length="15"
+                nullable="false"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="map_id"/>
+        </constraint>
+    </table>
+</schema>
