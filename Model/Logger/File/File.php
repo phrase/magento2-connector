@@ -5,7 +5,7 @@ namespace Memsource\Connector\Model\Logger\File;
 class File extends \SplFileInfo
 {
     /** @var string */
-    const FILE_NAME = 'memsource_connector.log';
+    const FILE_NAME = 'phrase_connector.log';
 
     /** @var string */
     const FILE_PATH = '/var/log/' . self::FILE_NAME;
